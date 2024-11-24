@@ -1,14 +1,6 @@
-const express = require('express');
-const path = require("node:path");
-const app = express();
-const port = 3002;
+import server from "./server";
+const port = process.env.PORT || 4000;
 
-
-// Routing
-app.get('/', (req, res) => {
-    res.send('Hello World desde index.js');
-});
-
-app.listen(port, () => {
-    console.log('Server started on port:', port);
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
